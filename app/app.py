@@ -42,7 +42,7 @@ def index():
         'endpoints': [
             {
                 'endpoint': '/price',
-                'description': 'Get price estimation of the shipment, given departure_at and arrival_at; e.g., http://127.0.0.1:5000/price?departure_at=2019-01-01&arrival_at=2020-05-01'
+                'description': 'Get price estimation of the shipment, given departure_at and arrival_at; e.g., /price?departure_at=2019-01-01&arrival_at=2020-05-01'
             }
         ]
     }
