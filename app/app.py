@@ -28,7 +28,7 @@ def query_price():
     res = {
         'departure_at': launch_time,
         'arrival_at': arrival_time,
-        'actual_launch_at': easy_orbit.get('launch_time'),
+        'actual_departure_at': easy_orbit.get('launch_time'),
         'actual_arrival_at': easy_orbit.get('arrivial_time'),
         'euros_per_kg': int(pe.price())
     }
