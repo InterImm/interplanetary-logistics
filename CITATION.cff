@@ -1,0 +1,12 @@
+
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Ma"
+  given-names: "Lei"
+  orcid: "https://orcid.org/0000-0002-9726-180X"
+title: "API for Interplanetary Logistics"
+version: 0.1.0
+doi: 10.5281/zenodo.5541567
+date-released: 2019-12-08
+url: "https://github.com/InterImm/interplanetary-logistics"
