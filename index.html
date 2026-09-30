@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script>document.documentElement.classList.add("js")</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
+    <title>Interplanetary Logistics | InterImm</title>
+    <meta name="description" content="Find the cheapest Earth to Mars transfer window and price a shipment from its delta-v.">
+    <meta name="author" content="InterImm">
+    <link rel="canonical" href="https://interimm.org/interplanetary-logistics/">
+
+    <meta property="og:site_name" content="InterImm">
+    <meta property="og:title" content="Interplanetary Logistics">
+    <meta property="og:description" content="Find the cheapest Earth to Mars transfer window and price a shipment from its delta-v.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://interimm.org/interplanetary-logistics/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://interimm.org/images/about/interimm_banner_black.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="assets/ico/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/ico/favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Site header: same as interimm.org (English). Internal links are absolute
+         because this page is served from a sub-path and from localhost. -->
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="https://interimm.org/en/">
+                <img class="brand-mark" src="assets/ico/favicon-96x96.png" alt="" width="32" height="32">
+                <span class="brand-name">InterImm</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="sr-only">Menu</span>
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+
+            <nav id="site-nav" class="site-nav" aria-label="Menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <details class="dropdown">
+                            <summary>Archives</summary>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://interimm.org/en/archives/">All archives</a></li>
+                                <li><a href="https://book.interimm.org/">The Book of Interplanetary Civilization</a></li>
+                                <li><a href="https://exoplanets.interimm.org/">The Book of Exoplanets</a></li>
+                                <li><a href="https://interimm.org/hub/">Space Yellow Page</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="https://planiversity.interimm.org/">Planetary University</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://interimm.org/en/activities/">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://interimm.org/mars-map/">Mars Map</a></li>
+                    <li class="nav-item">
+                        <details class="dropdown">
+                            <summary>More</summary>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://interimm.org/en/institutes/">Institutes</a></li>
+                                <li><a href="https://timeline.interimm.org/">Timeline</a></li>
+                                <li><a href="https://magazine.interimm.org/">Magazine</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+
+                <ul class="nav-list nav-tools">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/interimm" rel="noopener">
+                            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.921.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <header class="page-hero">
+            <div class="wrap">
+                <h1>Interplanetary Logistics</h1>
+                <p class="lede">
+                    Choose a departure and an arrival window. We solve the transfer orbits, find the
+                    cheapest trajectory to Mars and price your shipment from the fuel it takes.
+                </p>
+                <ul class="chips chips-small">
+                    <li>Earth to Mars</li>
+                    <li>Transfer windows</li>
+                    <li>Open source</li>
+                </ul>
+            </div>
+        </header>
+
+        <noscript><div class="wrap"><p class="form-error">This page needs JavaScript to run the orbit calculations.</p></div></noscript>
+
+        <div class="wrap tool">
+            <section class="card form-card" aria-labelledby="params-title">
+                <h2 id="params-title">Transfer windows</h2>
+                <p class="hint">Dates are UTC, between 1800 and 2050.</p>
+
+                <div class="presets" role="group" aria-label="Launch window presets">
+                    <span class="presets-label">Launch window</span>
+                    <span id="presets"></span>
+                </div>
+
+                <form id="transfer-form">
+                    <fieldset>
+                        <legend>Departure from Earth</legend>
+                        <div class="field-row">
+                            <label>From <input type="date" id="dpt-start" min="1800-01-01" max="2050-12-31" required></label>
+                            <label>To <input type="date" id="dpt-end" min="1800-01-01" max="2050-12-31" required></label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Arrival at Mars</legend>
+                        <div class="field-row">
+                            <label>From <input type="date" id="arr-start" min="1800-01-01" max="2050-12-31" required></label>
+                            <label>To <input type="date" id="arr-end" min="1800-01-01" max="2050-12-31" required></label>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-primary" id="submit">
+                        <span class="spinner" aria-hidden="true"></span>
+                        <span id="submit-label">Find cheapest transfer</span>
+                    </button>
+                    <p id="form-error" class="form-error" role="alert" hidden></p>
+                </form>
+            </section>
+
+            <div class="results-col">
+                <p id="status" class="status" role="status">Solving transfer orbits&hellip;</p>
+
+                <div id="results" hidden>
+                    <section class="card price-card" aria-labelledby="price-title">
+                        <div>
+                            <h2 id="price-title">Estimated price</h2>
+                            <p class="price"><span id="out-price">--</span><span class="unit">&euro; / kg</span></p>
+                        </div>
+                        <p class="price-basis">
+                            Total &Delta;v &times; <span id="out-rate">--</span>&nbsp;&euro; per kg for each km/s
+                        </p>
+                    </section>
+
+                    <section class="card" aria-labelledby="transfer-title">
+                        <h2 id="transfer-title">Cheapest transfer</h2>
+                        <div class="stats">
+                            <div class="stat"><span class="label">Departure</span><span class="value" id="out-dpt">--</span></div>
+                            <div class="stat"><span class="label">Arrival</span><span class="value" id="out-arr">--</span></div>
+                            <div class="stat"><span class="label">Time of flight</span><span class="value" id="out-tof">--</span></div>
+                            <div class="stat"><span class="label">Total &Delta;v</span><span class="value" id="out-dv">--</span></div>
+                            <div class="stat"><span class="label">Launch energy C3</span><span class="value" id="out-c3">--</span></div>
+                            <div class="stat"><span class="label">Arrival v&infin;</span><span class="value" id="out-vinf">--</span></div>
+                        </div>
+
+                        <div class="budget">
+                            <div class="split" id="split" role="img">
+                                <span class="seg seg-dep" id="seg-dep"></span>
+                                <span class="seg seg-arr" id="seg-arr"></span>
+                            </div>
+                            <div class="budget-legend">
+                                <span><i class="swatch swatch-dep"></i>Earth departure burn <b id="out-dv-dep">--</b></span>
+                                <span><i class="swatch swatch-arr"></i>Mars capture burn <b id="out-dv-arr">--</b></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="card" aria-labelledby="plot-title">
+                        <h2 id="plot-title">Porkchop plot</h2>
+                        <p class="hint">
+                            Total &Delta;v for every departure and arrival date in your windows. Brighter is cheaper;
+                            the ring marks the optimum. Hover to explore.
+                        </p>
+                        <div class="plot">
+                            <canvas id="porkchop" role="img"></canvas>
+                            <div id="plot-tip" class="tip" hidden></div>
+                        </div>
+                        <div class="legend">
+                            <span id="legend-min">--</span>
+                            <span class="legend-bar" id="legend-bar" aria-hidden="true"></span>
+                            <span id="legend-max">--</span>
+                        </div>
+                        <p class="hint" id="plot-note" hidden></p>
+                    </section>
+
+                    <details class="card notes">
+                        <summary>Method and assumptions</summary>
+                        <ul>
+                            <li>Cheapest single-revolution, prograde transfer between the planets, found by solving Lambert&rsquo;s problem for every date pair, with impulsive burns.</li>
+                            <li>&Delta;v covers departure from a 300&nbsp;km circular Earth orbit and propulsive capture into a 300&nbsp;km circular Mars orbit. No aerobraking, which would make the arrival burn cheaper.</li>
+                            <li>Planet positions come from the JPL approximate ephemeris. For the 2026&ndash;2034 windows it gives the same optimum dates as JPL&rsquo;s full ephemeris and a &Delta;v within about 1&nbsp;m/s.</li>
+                            <li>C3 is the launch energy, the square of the excess speed leaving Earth. v&infin; is the excess speed arriving at Mars.</li>
+                            <li>The method, its accuracy and the source code are on <a href="https://github.com/InterImm/interplanetary-logistics">GitHub</a>.</li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Site footer: same three columns as interimm.org (English) -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <section class="footer-col">
+                    <h2>About</h2>
+                    <p>Interplanetary Immigration Center is the key member of Interplanetary Immigration Agency. We research and develop space related products and serve the society on Mars.</p>
+                    <ul>
+                        <li><a href="https://github.com/InterImm/service/releases">PressKit</a></li>
+                        <li><a href="https://interimm.org/en/about/">About</a></li>
+                    </ul>
+                </section>
+                <section class="footer-col">
+                    <h2>Social Media</h2>
+                    <ul>
+                        <li><a href="https://github.com/InterImm">GitHub</a></li>
+                        <li><a href="mailto:admin@interimm.org">admin@interimm.org</a></li>
+                        <li><a href="https://zhuanlan.zhihu.com/interimm">Zhihu Blog</a></li>
+                        <li><a href="https://www.weibo.com/iiaofficial">Weibo</a></li>
+                        <li><a href="https://www.guokr.com/group/i/1703723671/">Guokr</a></li>
+                        <li><a href="https://www.zhihu.com/people/interimm">Zhihu Profile</a></li>
+                        <li><a href="https://discord.gg/pyfyR2X">InterImm@Discord</a></li>
+                        <li><a href="https://space.bilibili.com/6296332">Bilibili @ 星际移民中心</a></li>
+                    </ul>
+                </section>
+                <section class="footer-col">
+                    <h2>Network</h2>
+                    <ul>
+                        <li><a href="http://exponentialdeepspace.org">Exponential Deep Space</a></li>
+                        <li><a href="https://planiversity.interimm.org">Planetary University of Mars</a></li>
+                        <li><a href="https://starspress.org/">STARS Press</a></li>
+                    </ul>
+                </section>
+            </div>
+            <p class="footer-legal">&copy; <span data-year>2026</span> InterImm</p>
+        </div>
+    </footer>
+
+    <script src="js/site.js" defer></script>
+    <!-- type="module" is necessary to support JS imports -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

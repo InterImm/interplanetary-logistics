@@ -1,0 +1,294 @@
+/* Interplanetary Logistics: styles specific to this tool.
+   Tokens, header, footer, buttons and cards come from site.css (shared with the
+   landing site), so everything here uses those tokens and follows the visitor's
+   light or dark setting. */
+
+:root {
+    --earth: #2563eb;
+    --mars: #e11d48;
+    --danger: #b42318;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --earth: #60a5fa;
+        --mars: #fb7185;
+        --danger: #fda29b;
+    }
+}
+
+[hidden] { display: none !important; }
+
+/* ---------- layout ---------- */
+.tool {
+    display: grid;
+    grid-template-columns: minmax(18.5rem, 22.5rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    padding-block: clamp(2rem, 5vw, 3.5rem);
+}
+
+.form-card { position: sticky; top: 5.5rem; }
+
+.results-col, #results { display: grid; gap: 1.5rem; }
+
+.card h2 { margin: 0 0 0.25rem; font-size: 1.15rem; }
+
+.hint { margin: 0 0 1rem; color: var(--muted); font-size: 0.9rem; }
+
+.status { margin: 0; color: var(--muted); }
+.status:empty { display: none; }
+
+/* ---------- form ---------- */
+.presets { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+
+.presets-label, legend {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.presets-label { width: 100%; }
+#presets { display: contents; }
+
+/* Toggle buttons in the same pill style as the landing site's links */
+.chip {
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.15s, background 0.15s;
+}
+
+.chip:hover { border-color: var(--link); color: var(--link); transform: translateY(-1px); }
+
+.chip[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 24%, var(--surface));
+    color: var(--text);
+    font-weight: 600;
+}
+
+fieldset { margin: 0 0 1.25rem; padding: 0; border: 0; }
+legend { margin-bottom: 0.5rem; padding: 0; }
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+label { display: grid; gap: 0.25rem; color: var(--muted); font-size: 0.85rem; }
+
+input[type="date"] {
+    width: 100%;
+    min-width: 0;
+    height: 2.75rem;
+    padding: 0 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+}
+
+input[type="date"]:hover { border-color: var(--link); }
+input[type="date"]:focus-visible { outline-offset: 0; }
+
+#submit { width: 100%; }
+#submit[aria-busy="true"] { cursor: progress; opacity: 0.75; }
+#submit:disabled { transform: none; }
+
+.spinner {
+    display: none;
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+#submit[aria-busy="true"] .spinner { display: block; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.form-error {
+    margin: 0.75rem 0 0;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid var(--danger);
+    border-radius: 0.6rem;
+    background: color-mix(in srgb, var(--danger) 10%, var(--surface));
+    color: var(--danger);
+    font-size: 0.95rem;
+}
+
+/* ---------- price ---------- */
+.price-card {
+    flex-direction: row; /* .card in site.css is a column */
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    border-left: 4px solid var(--accent);
+}
+
+.price { display: flex; align-items: baseline; gap: 0.6rem; margin: 0; }
+
+#out-price {
+    font-size: clamp(2.6rem, 7vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+.unit { color: var(--muted); font-size: 1.1rem; }
+
+.price-basis { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- transfer summary ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.stat {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.8rem;
+    background: var(--bg-alt);
+}
+
+.stat .label {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.stat .value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    font-variant-numeric: tabular-nums;
+}
+
+.budget { margin-top: 1.25rem; }
+
+.split { display: flex; height: 0.65rem; overflow: hidden; border-radius: 999px; background: var(--bg-alt); }
+.seg { height: 100%; }
+.seg-dep, .swatch-dep { background: var(--earth); }
+.seg-arr, .swatch-arr { background: var(--mars); }
+.seg-dep { width: 50%; }
+.seg-arr { width: 50%; margin-left: 2px; }
+
+.budget-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin-top: 0.6rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.budget-legend b { color: var(--text); font-variant-numeric: tabular-nums; }
+
+.swatch { display: inline-block; width: 0.65rem; height: 0.65rem; margin-right: 0.45rem; border-radius: 0.2rem; }
+
+/* ---------- porkchop plot ---------- */
+.plot { position: relative; }
+
+canvas {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    touch-action: pan-y;
+
+    /* read by js/porkchop.js */
+    --plot-text: var(--text);
+    --plot-muted: var(--muted);
+    --plot-grid: rgb(18 26 43 / 0.2);
+    --plot-frame: rgb(18 26 43 / 0.4);
+    --plot-empty: rgb(18 26 43 / 0.05);
+    --plot-cursor: rgb(18 26 43 / 0.8);
+    --plot-marker: #121a2b;
+    --plot-marker-halo: rgb(255 255 255 / 0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+    canvas {
+        --plot-grid: rgb(255 255 255 / 0.16);
+        --plot-frame: rgb(255 255 255 / 0.3);
+        --plot-empty: rgb(255 255 255 / 0.04);
+        --plot-cursor: rgb(255 255 255 / 0.75);
+        --plot-marker: #ffffff;
+        --plot-marker-halo: rgb(7 11 24 / 0.85);
+    }
+}
+
+.tip {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    gap: 0.1rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.tip b { font-size: 1rem; font-variant-numeric: tabular-nums; }
+.tip span { color: var(--muted); }
+
+.legend {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.85rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.legend-bar { flex: 1; height: 0.5rem; border-radius: 999px; }
+
+#plot-note { margin: 0.6rem 0 0; }
+
+/* ---------- notes ---------- */
+.notes summary { cursor: pointer; font-weight: 700; }
+.notes ul { margin: 0.85rem 0 0; padding-left: 1.25rem; color: var(--muted); font-size: 0.95rem; }
+.notes li + li { margin-top: 0.5rem; }
+
+/* ---------- entrance ---------- */
+#results > * { animation: rise 0.45s ease both; }
+#results > :nth-child(2) { animation-delay: 0.06s; }
+#results > :nth-child(3) { animation-delay: 0.12s; }
+#results > :nth-child(4) { animation-delay: 0.18s; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+
+/* ---------- responsive ---------- */
+@media (max-width: 56rem) {
+    .tool { grid-template-columns: 1fr; }
+    .form-card { position: static; }
+}
+
+@media (max-width: 35rem) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    canvas { aspect-ratio: 4 / 3; }
+}
