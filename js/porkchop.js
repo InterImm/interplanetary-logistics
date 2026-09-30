@@ -17,8 +17,7 @@ const LUT = Array.from({ length: 256 }, (_, n) => {
     return STOPS[k].map((c, i) => Math.round(c + (STOPS[k + 1][i] - c) * (x - k)));
 });
 
-const MARGIN = { right: 14, top: 14, bottom: 48 };
-const marginLeft = (width) => (width < 480 ? 76 : 88); // room for the y tick labels and title
+const MARGIN = { left: 88, right: 14, top: 14, bottom: 48 }; // left is a default; draw() widens it to fit the y labels
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dateFmt = new Intl.DateTimeFormat(undefined, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 
@@ -64,15 +63,13 @@ export function createPorkchop(canvas, tooltip) {
         image.getContext('2d').putImageData(data, 0, 0);
     }
 
-    const plotRect = () => {
-        const left = marginLeft(canvas.clientWidth);
-        return {
-            x: left,
-            y: MARGIN.top,
-            w: canvas.clientWidth - left - MARGIN.right,
-            h: canvas.clientHeight - MARGIN.top - MARGIN.bottom,
-        };
-    };
+    let left = MARGIN.left;
+    const plotRect = () => ({
+        x: left,
+        y: MARGIN.top,
+        w: canvas.clientWidth - left - MARGIN.right,
+        h: canvas.clientHeight - MARGIN.top - MARGIN.bottom,
+    });
 
     // Pixel position of the centre of a (fractional) grid cell
     const xOf = (p, i) => p.x + ((i + 0.5) / grid.nDep) * p.w;
@@ -92,6 +89,15 @@ export function createPorkchop(canvas, tooltip) {
 
         const css = getComputedStyle(canvas);
         const theme = (name) => css.getPropertyValue(name).trim();
+
+        // Size the left margin from the widest y label, so the rotated axis title
+        // never collides with it whatever font the device uses.
+        ctx.font = `12px ${css.fontFamily}`;
+        const dptEnd = grid.dptStartJD + (grid.nDep - 1) * grid.step;
+        const arrEnd = grid.arrStartJD + (grid.nArr - 1) * grid.step;
+        const yTicks = monthTicks(grid.arrStartJD, arrEnd, Math.max(2, Math.floor((h - MARGIN.top - MARGIN.bottom) / 34)));
+        const widest = Math.max(0, ...yTicks.map((t) => ctx.measureText(t.label).width));
+        left = Math.max(MARGIN.left, Math.ceil(widest) + 42); // title (~24px) + gaps + labels
         const p = plotRect();
 
         ctx.fillStyle = theme('--plot-empty');
@@ -100,14 +106,11 @@ export function createPorkchop(canvas, tooltip) {
         ctx.drawImage(image, p.x, p.y, p.w, p.h);
 
         // Axes
-        ctx.font = `12px ${css.fontFamily}`;
         ctx.fillStyle = theme('--plot-text');
         ctx.strokeStyle = theme('--plot-grid');
         ctx.lineWidth = 1;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
-        const dptEnd = grid.dptStartJD + (grid.nDep - 1) * grid.step;
-        const arrEnd = grid.arrStartJD + (grid.nArr - 1) * grid.step;
         for (const t of monthTicks(grid.dptStartJD, dptEnd, Math.max(2, Math.floor(p.w / 76)))) {
             const x = Math.round(xOf(p, (t.jd - grid.dptStartJD) / grid.step)) + 0.5;
             ctx.beginPath(); ctx.moveTo(x, p.y); ctx.lineTo(x, p.y + p.h); ctx.stroke();
@@ -115,7 +118,7 @@ export function createPorkchop(canvas, tooltip) {
         }
         ctx.textAlign = 'right';
         ctx.textBaseline = 'middle';
-        for (const t of monthTicks(grid.arrStartJD, arrEnd, Math.max(2, Math.floor(p.h / 34)))) {
+        for (const t of yTicks) {
             const y = Math.round(yOf(p, (t.jd - grid.arrStartJD) / grid.step)) + 0.5;
             ctx.beginPath(); ctx.moveTo(p.x, y); ctx.lineTo(p.x + p.w, y); ctx.stroke();
             ctx.fillText(t.label, p.x - 8, y);

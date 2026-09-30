@@ -34,3 +34,16 @@ See [docs/index.md](docs/index.md) for the method and its assumptions.
 | `js/porkchop.js` | Canvas porkchop plot of delta-v over the searched dates |
 | `js/pricing_engine.js` | Turns delta-v into a price |
 | `js/main.js` | Page wiring |
+| `css/style.css` | Styles specific to this tool |
+| `css/site.css`, `js/site.js` | Header, footer, colours and buttons shared with interimm.org |
+| `assets/ico/` | Logo and favicons, copied from interimm.org |
+
+## Matching interimm.org
+
+The header, footer, colour tokens and menu script are copied from the landing
+site ([InterImm/interimm.github.io](https://github.com/InterImm/interimm.github.io),
+branch `hugo`: `assets/css/main.css`, `assets/js/main.js`, `hugo.yaml` for the menu and
+`data/footer.yml` for the footer). The copy in `css/site.css` and `js/site.js` is
+verbatim, so when the landing site changes its look, re-copy those sections and update
+the header and footer markup in `index.html` to match. Anything specific to this
+tool goes in `css/style.css`, which only uses the shared tokens.
