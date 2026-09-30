@@ -1,4 +1,0 @@
-numpy==1.17.2
-poliastro[jupyter]
-Flask==1.1.1
-gunicorn==19.9.0
