@@ -35,15 +35,15 @@ See [docs/index.md](docs/index.md) for the method and its assumptions.
 | `js/pricing_engine.js` | Turns delta-v into a price |
 | `js/main.js` | Page wiring |
 | `css/style.css` | Styles specific to this tool |
-| `css/site.css`, `js/site.js` | Header, footer, colours and buttons shared with interimm.org |
 | `assets/ico/` | Logo and favicons, copied from interimm.org |
 
 ## Matching interimm.org
 
-The header, footer, colour tokens and menu script are copied from the landing
-site ([InterImm/interimm.github.io](https://github.com/InterImm/interimm.github.io),
-branch `hugo`: `assets/css/main.css`, `assets/js/main.js`, `hugo.yaml` for the menu and
-`data/footer.yml` for the footer). The copy in `css/site.css` and `js/site.js` is
-verbatim, so when the landing site changes its look, re-copy those sections and update
-the header and footer markup in `index.html` to match. Anything specific to this
-tool goes in `css/style.css`, which only uses the shared tokens.
+The header, footer, fonts, colour tokens and menu script come from the shared InterImm kit, which
+interimm.org serves at `https://interimm.org/kit/interimm.css` and `https://interimm.org/kit/interimm.js`
+(source and notes: [InterImm/interimm.github.io `kit/`](https://github.com/InterImm/interimm.github.io/blob/hugo/kit/README.md)).
+Nothing is copied, so this page follows the main site's look automatically. The script also fills in the
+header and footer from interimm.org's current menu; the markup in `index.html` is only the fallback.
+Anything specific to this tool goes in `css/style.css`, which only uses the kit's tokens.
+
+Running locally still loads the kit from interimm.org, so it needs an internet connection to look right.

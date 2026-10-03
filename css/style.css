@@ -1,7 +1,7 @@
 /* Interplanetary Logistics: styles specific to this tool.
-   Tokens, header, footer, buttons and cards come from site.css (shared with the
-   landing site), so everything here uses those tokens and follows the visitor's
-   light or dark setting. */
+   Tokens, header, footer, buttons and cards come from the shared InterImm kit
+   (https://interimm.org/kit/interimm.css), so everything here uses those tokens
+   and follows the visitor's light or dark setting. */
 
 :root {
     --earth: #2563eb;
@@ -53,7 +53,7 @@
 .presets-label { width: 100%; }
 #presets { display: contents; }
 
-/* Toggle buttons in the same pill style as the landing site's links */
+/* Toggle buttons in the same pill style as the kit's chips */
 .chip {
     padding: 0.35rem 0.8rem;
     border: 1px solid var(--border);
@@ -129,7 +129,7 @@ input[type="date"]:focus-visible { outline-offset: 0; }
 
 /* ---------- price ---------- */
 .price-card {
-    flex-direction: row; /* .card in site.css is a column */
+    flex-direction: row; /* .card in the kit is a column */
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
