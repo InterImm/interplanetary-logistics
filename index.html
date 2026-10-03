@@ -5,8 +5,8 @@
     <script>document.documentElement.classList.add("js")</script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
-    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#07090f" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
     <title>Interplanetary Logistics | InterImm</title>
     <meta name="description" content="Find the cheapest Earth to Mars transfer window and price a shipment from its delta-v.">
     <meta name="author" content="InterImm">
@@ -25,15 +25,17 @@
     <link rel="icon" type="image/png" href="assets/ico/favicon-192x192.png" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/ico/apple-touch-icon.png">
 
-    <link rel="stylesheet" href="css/site.css">
+    <!-- Shared InterImm look (colours, fonts, header, footer), served by interimm.org. See
+         https://github.com/InterImm/interimm.github.io/blob/hugo/kit/README.md -->
+    <link rel="stylesheet" href="https://interimm.org/kit/interimm.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Site header: same as interimm.org (English). Internal links are absolute
-         because this page is served from a sub-path and from localhost. -->
-    <header class="site-header">
+    <!-- Site header: replaced with the live interimm.org menu by the kit script.
+         The markup below is the fallback when JavaScript or interimm.org is unavailable. -->
+    <header class="site-header" data-interimm-header data-lang="en" data-current="logistics">
         <div class="wrap header-inner">
             <a class="brand" href="https://interimm.org/en/">
                 <img class="brand-mark" src="assets/ico/favicon-96x96.png" alt="" width="32" height="32">
@@ -86,8 +88,9 @@
     </header>
 
     <main id="main">
-        <header class="page-hero">
+        <header class="page-hero space">
             <div class="wrap">
+                <p class="kicker">InterImm</p>
                 <h1>Interplanetary Logistics</h1>
                 <p class="lede">
                     Choose a departure and an arrival window. We solve the transfer orbits, find the
@@ -208,8 +211,8 @@
         </div>
     </main>
 
-    <!-- Site footer: same three columns as interimm.org (English) -->
-    <footer class="site-footer">
+    <!-- Site footer: replaced with the live interimm.org footer by the kit script; this is the fallback. -->
+    <footer class="site-footer" data-interimm-footer>
         <div class="wrap">
             <div class="footer-grid">
                 <section class="footer-col">
@@ -246,7 +249,7 @@
         </div>
     </footer>
 
-    <script src="js/site.js" defer></script>
+    <script src="https://interimm.org/kit/interimm.js" defer></script>
     <!-- type="module" is necessary to support JS imports -->
     <script type="module" src="js/main.js"></script>
 </body>
