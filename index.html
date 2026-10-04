@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <script>document.documentElement.classList.add("js")</script>
+    <script>document.documentElement.classList.add("js");(function(m){if(m)document.documentElement.dataset.theme=m[1]})(document.cookie.match(/(?:^|; )interimm-theme=(light|dark)/))</script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
     <meta name="theme-color" content="#07090f" media="(prefers-color-scheme: dark)">
@@ -28,7 +28,7 @@
     <!-- Shared InterImm look (colours, fonts, header, footer), served by interimm.org. See
          https://github.com/InterImm/interimm.github.io/blob/hugo/kit/README.md -->
     <link rel="stylesheet" href="https://interimm.org/kit/interimm.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20261004">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -251,6 +251,6 @@
 
     <script src="https://interimm.org/kit/interimm.js" defer></script>
     <!-- type="module" is necessary to support JS imports -->
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js?v=20261004"></script>
 </body>
 </html>

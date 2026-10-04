@@ -1,6 +1,6 @@
 import { findOptimalTransfer } from './orbital_engine.js';
 import { PricingEngine } from './pricing_engine.js';
-import { createPorkchop, COLOR_RANGE_KMS, LEGEND_GRADIENT } from './porkchop.js';
+import { createPorkchop, COLOR_RANGE_KMS, LEGEND_GRADIENT } from './porkchop.js?v=20261004';
 
 // Upcoming Earth-Mars launch windows: departure and arrival search ranges
 // centred on each window's cheapest transfer.

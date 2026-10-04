@@ -189,7 +189,8 @@ export function createPorkchop(canvas, tooltip) {
         draw();
     });
     new ResizeObserver(draw).observe(canvas);
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', draw);
+    // the kit fires interimm:theme when the system setting or the header switch changes the theme
+    document.addEventListener('interimm:theme', draw);
 
     return {
         update(newGrid, newBest) {
