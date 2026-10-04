@@ -10,11 +10,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --earth: #60a5fa;
         --mars: #fb7185;
         --danger: #fda29b;
     }
+}
+:root[data-theme="dark"] {
+    --earth: #60a5fa;
+    --mars: #fb7185;
+    --danger: #fda29b;
 }
 
 [hidden] { display: none !important; }
@@ -227,7 +232,7 @@ canvas {
 }
 
 @media (prefers-color-scheme: dark) {
-    canvas {
+    :root:not([data-theme="light"]) canvas {
         --plot-grid: rgb(255 255 255 / 0.16);
         --plot-frame: rgb(255 255 255 / 0.3);
         --plot-empty: rgb(255 255 255 / 0.04);
@@ -235,6 +240,14 @@ canvas {
         --plot-marker: #ffffff;
         --plot-marker-halo: rgb(7 11 24 / 0.85);
     }
+}
+:root[data-theme="dark"] canvas {
+    --plot-grid: rgb(255 255 255 / 0.16);
+    --plot-frame: rgb(255 255 255 / 0.3);
+    --plot-empty: rgb(255 255 255 / 0.04);
+    --plot-cursor: rgb(255 255 255 / 0.75);
+    --plot-marker: #ffffff;
+    --plot-marker-halo: rgb(7 11 24 / 0.85);
 }
 
 .tip {
